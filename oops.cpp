@@ -43,7 +43,7 @@ int main(){
     Hero B(85,'6');
     cout<<"Health of Hero is : "<<B.getHealth()<<" and his level is : "<<B.getLevel()<<endl;
     
-    Hero R(A);
+    Hero R(A);  //copy constructor
     cout<<"Copy Constructor called\n";
     cout<<"Health of Hero is : "<<R.getHealth()<<" and his level is : "<<R.getLevel();
     
