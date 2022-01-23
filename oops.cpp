@@ -5,11 +5,11 @@ class Hero{
     char level;
      public:
      int getHealth(){  //member function to access Health
-         return health;
+         return this->health;
      }
      
      char getLevel(){   //member function to access Level
-         return level;
+         return this->level;
      }
      
      void setHealth(int h){  //member function to set the health(mutator function)
@@ -38,10 +38,14 @@ int main(){
     Hero A;   //object A created
     A.setHealth(99);
     A.setLevel('8');
-    cout<<"Health of Hero is : "<<A.getHealth()<<" and his level is : "<<A.getLevel();
+    cout<<"Health of Hero is : "<<A.getHealth()<<" and his level is : "<<A.getLevel()<<endl;
     
     Hero B(85,'6');
-    cout<<"Health of Hero is : "<<B.getHealth()<<" and his level is : "<<B.getLevel();
+    cout<<"Health of Hero is : "<<B.getHealth()<<" and his level is : "<<B.getLevel()<<endl;
+    
+    Hero R(A);
+    cout<<"Copy Constructor called\n";
+    cout<<"Health of Hero is : "<<R.getHealth()<<" and his level is : "<<R.getLevel();
     
     return 0;
 }
