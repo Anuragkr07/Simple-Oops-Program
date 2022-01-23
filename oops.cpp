@@ -21,7 +21,7 @@ class Hero{
      }
      
      Hero(){
-         cout<<"Normal Constructor Called\n";
+         cout<<"Simple Constructor Called\n";
      }
      
      Hero(int health,char level)
@@ -29,6 +29,12 @@ class Hero{
          cout<<"\nparamaterised Constructor called\n";
          this->health=health;
          this->level=level;
+     }
+     
+     Hero(Hero& temp){ 
+         cout<<"\nCopy Constructor called\n";
+         this->health=temp.health;
+         this->level=temp.level;
      }
 };
 
@@ -43,8 +49,7 @@ int main(){
     Hero B(85,'6');
     cout<<"Health of Hero is : "<<B.getHealth()<<" and his level is : "<<B.getLevel()<<endl;
     
-    Hero R(A);  //copy constructor
-    cout<<"Copy Constructor called\n";
+    Hero R(A);
     cout<<"Health of Hero is : "<<R.getHealth()<<" and his level is : "<<R.getLevel();
     
     return 0;
